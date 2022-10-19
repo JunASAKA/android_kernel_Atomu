@@ -29,6 +29,14 @@
 #include "rndis.h"
 #include "configfs.h"
 
+#include <linux/power_supply.h>
+#include <chipset_common/hwusb/hw_usb_rwswitch.h>
+#include <chipset_common/hwusb/hw_usb_sync_host_time.h>
+#include <linux/usb/huawei_usb.h>
+#include "u_fs.h"
+#include "u_ecm.h"
+#include "u_ncm.h"
+
 /*
  * This function is an RNDIS Ethernet port -- a Microsoft protocol that's
  * been promoted instead of the standard CDC Ethernet.  The published RNDIS
@@ -69,6 +77,13 @@
  *
  *   - MS-Windows drivers sometimes emit undocumented requests.
  */
+
+usb_param usb_parameter = {
+        .usb_serial = {0},
+        .vender_name = {0},
+        .country_name = {0},
+        .hw_custom_features = 0
+};
 
 static unsigned int rndis_dl_max_pkt_per_xfer = 3;
 module_param(rndis_dl_max_pkt_per_xfer, uint, S_IRUGO | S_IWUSR);

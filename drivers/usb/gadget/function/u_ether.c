@@ -29,7 +29,7 @@
 #include <linux/cpufreq.h>
 #include "u_ether.h"
 
-
+#include "rndis.h"
 /*
  * This component encapsulates the Ethernet link glue needed to provide
  * one (!) network link through the USB gadget stack, normally "usb0".

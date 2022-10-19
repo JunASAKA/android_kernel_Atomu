@@ -196,6 +196,10 @@ struct qusb_phy {
 
 };
 
+#ifdef CONFIG_USB_ETH
+int usb_debug = USB_LOGS_INFO;
+#endif
+
 static void qusb_phy_update_tcsr_level_shifter(struct qusb_phy *qphy, u32 val)
 {
 	int scm_ret, resp_ret;

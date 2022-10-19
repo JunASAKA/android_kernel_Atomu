@@ -80,6 +80,8 @@
 #include "f_gsi.c"
 #include "f_mass_storage.h"
 
+#include "debug.h"
+
 #ifdef CONFIG_HUAWEI_USB
 #include "hw_rt_deep_sleep_android.c"
 #endif
