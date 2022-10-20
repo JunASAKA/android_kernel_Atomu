@@ -78,12 +78,14 @@
  *   - MS-Windows drivers sometimes emit undocumented requests.
  */
 
+#ifdef CONFIG_USB_ETH
 usb_param usb_parameter = {
         .usb_serial = {0},
         .vender_name = {0},
         .country_name = {0},
         .hw_custom_features = 0
 };
+#endif
 
 static unsigned int rndis_dl_max_pkt_per_xfer = 3;
 module_param(rndis_dl_max_pkt_per_xfer, uint, S_IRUGO | S_IWUSR);
